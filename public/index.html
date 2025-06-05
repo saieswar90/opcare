@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PostOpCare - Post-Operative Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🩺 PostOpCare Dashboard</h1>
+      <p class="subtitle">Manage patients, appointments, and care tracking</p>
+    </header>
+
+    <main>
+      <!-- Patient Section -->
+      <section class="card">
+        <h2>Add Patient</h2>
+        <form id="addPatientForm" class="form-grid">
+          <input type="text" id="patientName" placeholder="Full Name" required />
+          <input type="text" id="areaCode" placeholder="Area Code" />
+          <input type="text" id="phoneNumber" placeholder="Phone Number" required />
+          <button type="submit">➕ Add Patient</button>
+        </form>
+        <ul id="patientsList" class="data-list"></ul>
+      </section>
+
+      <!-- Medication Section -->
+      <section class="card">
+        <h2>Add Medication</h2>
+        <form id="addMedicationForm" class="form-grid">
+          <input type="text" id="medicationName" placeholder="Medication Name" required />
+          <input type="date" id="medicationDate" required />
+          <select id="medicationPatientId" required></select>
+          <button type="submit">💊 Add Medication</button>
+        </form>
+        <ul id="medicationsList" class="data-list"></ul>
+      </section>
+
+      <!-- Appointment Section -->
+      <section class="card">
+        <h2>Add Appointment</h2>
+        <form id="addAppointmentForm" class="form-grid">
+          <input type="date" id="appointmentDate" required />
+          <input type="text" id="appointmentFrequency" placeholder="Frequency (e.g. Weekly)" />
+          <select id="appointmentPatientId" required></select>
+          <button type="submit">📅 Add Appointment</button>
+        </form>
+        <ul id="appointmentsList" class="data-list"></ul>
+      </section>
+
+      <!-- Doctor Section -->
+      <section class="card">
+        <h2>Add Doctor</h2>
+        <form id="addDoctorForm" class="form-grid">
+          <input type="text" id="doctorName" placeholder="Doctor Name" required />
+          <input type="text" id="doctorRecoveryStatus" placeholder="Recovery Status" />
+          <button type="submit">🩻 Add Doctor</button>
+        </form>
+        <ul id="doctorsList" class="data-list"></ul>
+      </section>
+
+      <!-- Consultation Section -->
+      <section class="card">
+        <h2>Add Consultation</h2>
+        <form id="addConsultationForm" class="form-grid">
+          <input type="text" id="consultationDoctorName" placeholder="Doctor Name" required />
+          <input type="date" id="consultationDate" required />
+          <textarea id="consultationRemarks" placeholder="Remarks"></textarea>
+          <select id="consultationPatientId" required></select>
+          <select id="consultationDoctorId" required></select>
+          <button type="submit">🗣️ Add Consultation</button>
+        </form>
+        <ul id="consultationsList" class="data-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 PostOpCare Inc. | Built for recovery tracking</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
